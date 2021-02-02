@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { initJokeList } from '../store/reducers/joke';
 
 import greenLight from '../assets/images/green-light.png';
 import searchWhite from '../assets/images/search-white.png';
@@ -6,6 +9,11 @@ import arrowDown from '../assets/images/arrow-down.png';
 import arrowRight from '../assets/images/arrow-right.png';
 
 export default () => {
+
+  const dispatch = useDispatch();
+  const jokeList = useSelector((state) => state.joke.list);
+  const jokeCategories = useSelector((state) => state.joke.categories);
+
   const filterButtons = [
     {
       key: 'adult',
@@ -87,6 +95,11 @@ export default () => {
     setActiveFilter('');
     setJokes(totalJokes);
   };
+
+  useEffect(() => {
+    dispatch(initJokeList());
+  }, []);
+
   return (
     <>
       <div className="page-banner">
@@ -123,17 +136,17 @@ export default () => {
             )
             : (<span className="filter-badge">All</span>)}
           <div className="row">
-            {jokes.length > 0
+            {jokeList.length > 0
               ? (
                 <>
-                  {jokes.map((joke, index) => (
+                  {jokeList.map((joke, index) => (
                     <div className="col-md-4" key={index}>
                       <div className="joke-card">
                         <p className="card-title">
                           <img src={greenLight} alt="Card Icon" className="card-icon" />
-                          {joke.name}
+                          Joke Title
                         </p>
-                        <p className="card-info">{joke.info}</p>
+                        <p className="card-info">{joke.value}</p>
                         <p className="see-stats">
                           See Stats
                           <img src={arrowRight} alt="Stats Icon" className="stats-icon" />
