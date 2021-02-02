@@ -30,7 +30,9 @@ export const Header = () => {
       <div className="app-header">
         <div className="container d-flex justify-content-between h-100">
           <div className="logo h-100">
-            <img src={vehiculumLogo} className="logo-img" alt="Logo" />
+            <a href="/" title="Vehiculum">
+              <img src={vehiculumLogo} className="logo-img" alt="Logo" />
+            </a>
           </div>
           <div className="top-navbar h-100">
             <ul>

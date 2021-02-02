@@ -127,7 +127,7 @@ export default () => {
               ? (
                 <>
                   {jokes.map((joke, index) => (
-                    <div className="joke-col" key={index}>
+                    <div className="col-md-4" key={index}>
                       <div className="joke-card">
                         <p className="card-title">
                           <img src={greenLight} alt="Card Icon" className="card-icon" />

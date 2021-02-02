@@ -110,11 +110,11 @@
 }
 
 .filter-result {
-  border-top: solid 2px #ecebe9;
+  border-top: solid 1px #ecebe9;
   padding-bottom: 58px;
 
   .filter-badge {
-    padding: 0 8px 0 20px;
+    padding: 0 14px;
     font-family: Montserrat, sans-serif;
     font-size: 12px;
     font-weight: 600;
@@ -133,6 +133,10 @@
     display: flex;
     flex-wrap: wrap;
 
+    [class^="col-"], [class*=" col-"] {
+      padding: 0 8px;
+    }
+
     .joke-col {
       width: 33.333%;
       padding: 0 8px;
@@ -147,6 +151,8 @@
     border: solid 1px #ecebe9;
     min-height: 264px;
     margin-bottom: 38px;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
 
     .card-title {
       font-family: Montserrat, sans-serif;
@@ -172,6 +178,7 @@
       color: #303030;
       margin-top: 0;
       margin-bottom: 0;
+      text-align: left;
     }
 
     .see-stats {
@@ -192,6 +199,10 @@
       .stats-icon {
         margin-left: 8px;
       }
+    }
+
+    &:hover {
+      box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.15);
     }
   }
 
