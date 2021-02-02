@@ -1,0 +1,224 @@
+.page-banner {
+  height: 320px;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../images/background-home.png);
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    font-family: $montserrat;
+    font-size: 48px;
+    line-height: 1.5;
+    color: #cfb995;
+    margin-top: 56px;
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+
+  .banner-lead {
+    font-family: Montserrat, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 45px;
+  }
+
+  .banner-search {
+    position: relative;
+
+    .search-input {
+      font-family: Montserrat, sans-serif;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 1.33;
+      color: #b2b2b2;
+      width: 458px;
+      height: 48px;
+      padding: 12px 40px 12px 16px;
+      border-radius: 4px;
+      border: solid 1px white;
+      background: transparent;
+      outline: none !important;
+
+      &::placeholder {
+        font-family: Montserrat, sans-serif;
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 1.33;
+        color: #b2b2b2;
+      }
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 16px;
+    }
+  }
+}
+
+.filter-section {
+  padding-top: 53px;
+  padding-bottom: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  .filter-button {
+    position: relative;
+    width: 206px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+    margin: 8px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+
+    &.active {
+      border: solid 1px #5e5e5e;
+      color: #5e5e5e;
+    }
+
+    &.view-all {
+      background-color: transparent;
+      border: solid 1px #d1bb91;
+      color: #cfb995;
+
+      .view-all-icon {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.filter-result {
+  border-top: solid 2px #ecebe9;
+  padding-bottom: 58px;
+
+  .filter-badge {
+    padding: 0 8px 0 20px;
+    font-family: Montserrat, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.83;
+    border-radius: 11px;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    width: fit-content;
+    margin-bottom: 17px;
+    background-color: #d1bb91;
+  }
+
+  .row {
+    margin: 0 -8px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .joke-col {
+      width: 33.333%;
+      padding: 0 8px;
+    }
+  }
+
+  .joke-card {
+    position: relative;
+    padding: 16px 15px;
+    background: white;
+    border-radius: 2px;
+    border: solid 1px #ecebe9;
+    min-height: 264px;
+    margin-bottom: 38px;
+
+    .card-title {
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+      color: #303030;
+      margin-bottom: 6px;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+
+      .card-icon {
+        padding-right: 8px;
+      }
+    }
+
+    .card-info {
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      line-height: 1.57;
+      color: #303030;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .see-stats {
+      position: absolute;
+      bottom: 17px;
+      right: 15px;
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.43;
+      color: #cfb995;
+      letter-spacing: normal;
+      text-transform: uppercase;
+      margin: 0;
+      display: flex;
+      align-items: center;
+
+      .stats-icon {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .view-more {
+    position: relative;
+    width: 206px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+    cursor: pointer;
+    border-radius: 2px;
+    border: solid 1px #d1bb91;
+    color: #cfb995;
+    background-color: transparent;
+
+    .view-all-icon {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

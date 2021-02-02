@@ -1,0 +1,39 @@
+.app-footer {
+  background-color: #cccccc;
+  height: 194px;
+  background-image: url(../images/footer-banner.png);
+  background-size: cover;
+  background-position: center;
+
+  .footer-action {
+    max-width: 206px;
+
+    .footer-submit-lead {
+      padding-top: 61px;
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+      color: white;
+      text-transform: uppercase;
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 13px;
+    }
+
+    .footer-link {
+      margin: 0;
+      display: flex;
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      line-height: 1.43;
+      color: #cfb995;
+      align-items: center;
+      text-transform: uppercase;
+
+      .link-icon {
+        margin-left: 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.app-header {
+  height: 60px;
+  background-color: #303030;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.top-navbar {
+  display: flex;
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    li {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      font-family: Montserrat, sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: white;
+      text-transform: uppercase;
+      height: 100%;
+      padding: 0 32px;
+      cursor: pointer;
+
+      .menu-icon {
+        padding-right: 8px;
+      }
+
+      .arrow-icon {
+        margin-left: 16px;
+        transition: 0.3s;
+        transform: rotate(180deg);
+      }
+
+      &:hover {
+        background-color: #cfb995;
+      }
+    }
+
+    .toggle-menu {
+      position: relative;
+
+      &:hover {
+        li {
+          background-color: #cfb995;
+        }
+
+        .arrow-icon {
+          transform: rotate(0deg);
+        }
+
+        .collapsed-menu-container {
+          opacity: 1;
+          z-index: 10;
+          pointer-events: unset;
+        }
+      }
+
+      .collapsed-menu-container {
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+      }
+
+      .collapsed-menu {
+        margin-top: 20px;
+        background-color: white;
+        width: 100%;
+        border: solid 1px #d7d7d7;
+        box-shadow: 0 -1px 3px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        padding: 16px 8px;
+        transition: 0.3s;
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 12px;
+          height: 12px;
+          background-color: white;
+          transform: rotate(45deg);
+          transform-origin: 31px -14px;
+          right: 20px;
+          border-top: solid 1px #d7d7d7;
+          border-left: solid 1px #d7d7d7;
+        }
+
+        p {
+          font-family: Montserrat, sans-serif;
+          font-size: 14px;
+          line-height: 1.43;
+          letter-spacing: normal;
+          color: #5e5e5e;
+          padding: 8px;
+          margin: 0;
+          border-bottom: solid 1px #d1d1d1;
+          cursor: pointer;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &:hover {
+            color: #cfb995;
+          }
+        }
+      }
+    }
+  }
+}
