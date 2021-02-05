@@ -13,3 +13,5 @@
 - Split the page component into special functional components
 - Re-arrange SCSS folder structure for scalability
 7. Build Single Joke page
+8. Integrate pages
+9. Final testing
