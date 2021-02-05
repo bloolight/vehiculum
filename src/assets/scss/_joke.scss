@@ -1,0 +1,329 @@
+@import "variables";
+
+.back-button {
+  width: 62px;
+  height: 61px;
+  background: $dark;
+  border: none;
+  outline: none;
+  margin-top: 46px;
+  margin-bottom: 48px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 52px 82px 113px 53px;
+  cursor: pointer;
+}
+
+.joke-detail {
+  padding-bottom: 73px;
+}
+
+.row {
+  margin: 0 -15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-8 {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 66.667%;
+    padding: 0 15px;
+  }
+}
+
+.col-4 {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 33.333%;
+    padding: 0 15px;
+  }
+}
+
+.joke-card {
+  width: 100%;
+  padding: 17px 22px 24px 16px;
+  border-radius: 4px;
+  border: solid 1px $white-three;
+  background: $white-two;
+
+  .joke-header {
+    display: flex;
+
+    .badge {
+      list-style: circle;
+      font-family: $montserrat;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.83;
+      letter-spacing: normal;
+      color: $white-two;
+      padding: 0px 8px 0px 14px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      background-color: $weird-green;
+      margin: 0;
+
+      &.uncategorized-badge {
+        background-color: #6c757d;
+      }
+
+      &.Social-badge {
+        background-color: $weird-green;
+      }
+
+      &.Adult-badge {
+        background-color: $adult;
+      }
+
+      &.Dad-badge {
+        background-color: $pastel-orange;
+      }
+
+      &.Christmas-badge {
+        background-color: $pale-orange;
+      }
+
+      &.Job-badge {
+        background-color: $light-gold;
+      }
+
+      &.Birthday-badge {
+        background-color: $kiwi-green;
+      }
+
+      &.Puns-badge {
+        background-color: $weird-green;
+      }
+    }
+
+    .like-label {
+      font-family: $montserrat;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.71;
+      text-transform: uppercase;
+      margin: 0;
+
+      &.chestnut {
+        color: $dark;
+      }
+
+      &.new-town {
+        color: $dodger-blue;
+      }
+
+      &.trending {
+        color: $macaroni;
+      }
+
+      &.hall-fame {
+        color: $tomato;
+      }
+    }
+  }
+
+  .card-content {
+    .title-content {
+      align-items: flex-end;
+    }
+
+    .title {
+      font-family: $montserrat;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: $brand;
+      margin: 0;
+    }
+
+    .number {
+      font-family: $montserrat;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.71;
+      color: $brand;
+      margin: 0;
+      padding-right: 35px;
+      padding-bottom: 10px
+    }
+
+    .description {
+      font-family: $montserrat;
+      font-size: 15px;
+      line-height: 1.47;
+      color: $black-two;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.option-content {
+  margin-top: 17px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .like-group {
+    display: flex;
+    justify-content: center;
+
+    .counter {
+      margin: 0 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      span {
+        margin-top: 5px;
+      }
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .like {
+      span {
+        color: $tea;
+        font-family: $montserrat;
+        font-size: 14px;
+      }
+
+      .circle {
+        background-color: $tea;
+
+        &:hover {
+          background-color: $light-forest-green;
+        }
+      }
+    }
+
+    .dislike {
+      span {
+        color: $lightish-red;
+        font-family: $montserrat;
+        font-size: 14px;
+      }
+
+      .circle {
+        background-color: $lightish-red;
+
+        &:hover {
+          background-color: $faded-red;
+        }
+      }
+    }
+  }
+
+  .pagination-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+    button {
+      width: 131px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px $white-three;
+      background-color: $white-two;
+      outline: none;
+      font-family: $montserrat;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.43;
+      color: $brand;
+      margin-right: 8px;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &.prev-button {
+        img {
+          margin-right: 8px;
+          position: relative;
+          transition: 0.5s;
+          right: 0;
+        }
+
+        &:hover {
+          img {
+            right: 8px;
+          }
+        }
+      }
+
+      &.next-button {
+        img {
+          position: relative;
+          margin-left: 8px;
+          transition: 0.5s;
+          left: 0;
+        }
+
+        &:hover {
+          img {
+            left: 8px;
+          }
+        }
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+      img {
+        width: 9px;
+      }
+    }
+  }
+}
+
+.week-card {
+  border: solid 1px $white-three;
+  background-color: $white-two;
+  height: 100%;
+  padding: 32px 32px 24px;
+
+  h3 {
+    font-family: $montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: $black-two;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+  }
+
+  .title-list {
+    font-family: $montserrat;
+    font-size: 15px;
+    line-height: 1.47;
+    color: $black-two;
+    margin: 0 0 8px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+

@@ -5,6 +5,8 @@ import JokeService from '../../services/jokeService';
 const initialState = {
   categories: [],
   list: [],
+  colors: ['#ff5b5b', '#ff915b', '#ffbe5b', '#ffdf5b', '#8fe360', '#57e690', '#57dbe6'],
+  joke: null,
   isInitialized: false,
   isMessageSending: false,
   typingStatus: 'off',
@@ -25,6 +27,9 @@ export const slice = createSlice({
     setInitialized: (state, action) => {
       state.isInitialized = action.payload;
     },
+    setJoke: (state, action) => {
+      state.joke = action.payload;
+    }
   },
 });
 
@@ -32,6 +37,7 @@ export const {
   setJokeList,
   setJokeCategories,
   setInitialized,
+  setJoke,
 } = slice.actions;
 const jokeService = new JokeService();
 
@@ -52,8 +58,6 @@ export const initJokeList = () => async (dispatch, getState) => {
 
     const response = await jokeService.searchByQuery({ query: 'all' });
 
-    console.log('response : ', response);
-
     if (response.result) {
       dispatch(setJokeList({ list: response.result }));
     }
@@ -66,10 +70,29 @@ export const initJokeList = () => async (dispatch, getState) => {
   }
 };
 
+export const initJokeCategories = () => async (dispatch) => {
+  try {
+    const response = await jokeService.pullCategories();
+
+    if (response.length > 0) {
+      const categories = response.map((item, index) => {
+        return {
+          name: item,
+          color: initialState.colors[index % initialState.colors.length],
+        }
+      });
+
+      dispatch(setJokeCategories({categories: categories}));
+    }
+  } catch (error) {
+    dispatch(handleError(error));
+  }
+};
+
 export const sendMessage = (msg, callback, retry = 0) => async (dispatch) => {
   try {
     await chatService.sendMessage(msg);
-    dispatch(insertChatHistory({from: 'user', message: msg}));
+    //dispatch(insertChatHistory({from: 'user', message: msg}));
     if (callback) {
       callback();
     }

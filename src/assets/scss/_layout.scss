@@ -2,10 +2,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -34,7 +30,7 @@ body {
 
 .App-body {
   position: relative;
-  min-height: calc(100vh - 48px);
+  min-height: calc(100vh - 60px);
 }
 
 @keyframes App-logo-spin {
