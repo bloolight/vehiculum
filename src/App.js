@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { ConnectedRouter } from 'connected-react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import loadable from '@loadable/component';
 
@@ -28,13 +27,13 @@ function App() {
   }, []);
 
   return (
-      <ConnectedRouter history={history}>
-        <Switch>
-          <AppRoute exact path="/" layout={MainLayout} component={AsyncMain} />
-          <AppRoute exact  path="/joke/:id" layout={MainLayout} component={AsyncJoke} />
-          <Route component={Async404} />
-        </Switch>
-      </ConnectedRouter>
+      <Router history={history}>
+          <Switch>
+            <AppRoute exact path="/" layout={MainLayout} component={AsyncMain} />
+            <AppRoute exact  path="/joke/:id" layout={MainLayout} component={AsyncJoke} />
+            <Route component={Async404} />
+          </Switch>
+      </Router>
   );
 }
 
