@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import chatService from '../../services/chatService';
 import JokeService from '../../services/jokeService';
 
 const initialState = {
@@ -83,18 +82,6 @@ export const initJokeCategories = () => async (dispatch) => {
       });
 
       dispatch(setJokeCategories({categories: categories}));
-    }
-  } catch (error) {
-    dispatch(handleError(error));
-  }
-};
-
-export const sendMessage = (msg, callback, retry = 0) => async (dispatch) => {
-  try {
-    await chatService.sendMessage(msg);
-    //dispatch(insertChatHistory({from: 'user', message: msg}));
-    if (callback) {
-      callback();
     }
   } catch (error) {
     dispatch(handleError(error));

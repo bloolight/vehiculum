@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import greenLight from '../assets/images/green-light.png';
 import arrowDown from '../assets/images/arrow-down.png';
 import arrowRight from '../assets/images/arrow-right.png';
-import {act} from "@testing-library/react";
 
 const UN_CATEGORIZED = {
   name: 'UN_CATEGORIZED',
