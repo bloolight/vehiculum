@@ -87,7 +87,7 @@ export default () => {
                     <div className="col-md-4" key={index}>
                       <div className="joke-card">
                         <p className="card-title">
-                          <img src={greenLight} alt="Card Icon" className="card-icon" />
+                          <img src={joke.icon_url} alt="Card Icon" className="card-icon" />
                           Joke Title
                         </p>
                         <p className="card-info">{joke.value}</p>
